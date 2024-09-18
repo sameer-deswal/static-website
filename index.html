@@ -15,7 +15,10 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            
+            font-family: "Reddit Sans Condensed", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 100;
+            font-style: normal;
         }
         .quote {
             font-size: 35px;
@@ -28,11 +31,30 @@
             font-weight: 600;
             font-style: normal;
         }
+
+        header {
+            position: absolute;
+            top: 14px;
+            text-align: left;
+            width: 100%;
+            padding-left: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+        }
     </style>
 </head>
 <body>
+    <header>Quotes on Minimalism</header>
     <div class="quote" id="quote"></div>
-
+    <footer>This is a static website.</footer>
     <script>
         const quotes = [
             "Minimalism is not a lack of something. It’s simply the perfect amount of something.",
