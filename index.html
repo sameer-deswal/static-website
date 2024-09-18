@@ -22,7 +22,7 @@
             font-weight: bold;
             text-align: center;
             opacity: 1;
-            transition: opacity 0.5s ease-in-out;
+            transition: opacity 2s ease-in-out;
             font-family: "Reddit Sans Condensed", sans-serif;
             font-optical-sizing: auto;
             font-weight: 600;
@@ -51,11 +51,11 @@
                 quoteElement.innerText = quotes[index];
                 quoteElement.style.opacity = 1; // Fade in
                 index = (index + 1) % quotes.length;
-            }, 500); // Wait for fade out to finish
+            }, 1500); // Wait for fade out to finish
         }
 
         changeQuote(); // Show the first quote immediately
-        setInterval(changeQuote, 3000); // Change quote every 3 seconds
+        setInterval(changeQuote, 5000); // Change quote every 3 seconds
     </script>
 </body>
 </html>
