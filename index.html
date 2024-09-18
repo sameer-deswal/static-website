@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minimalism Quotes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans+Condensed:wght@200..900&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: white;
@@ -11,13 +14,19 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            font-family: Arial, sans-serif;
             margin: 0;
+            
         }
         .quote {
-            font-size: 36px;
+            font-size: 35px;
             font-weight: bold;
             text-align: center;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+            font-family: "Reddit Sans Condensed", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
         }
     </style>
 </head>
@@ -36,12 +45,17 @@
         let index = 0;
 
         function changeQuote() {
-            document.getElementById('quote').innerText = quotes[index];
-            index = (index + 1) % quotes.length;
+            const quoteElement = document.getElementById('quote');
+            quoteElement.style.opacity = 0; // Fade out
+            setTimeout(() => {
+                quoteElement.innerText = quotes[index];
+                quoteElement.style.opacity = 1; // Fade in
+                index = (index + 1) % quotes.length;
+            }, 500); // Wait for fade out to finish
         }
 
         changeQuote(); // Show the first quote immediately
-        setInterval(changeQuote, 5000); // Change quote every second
+        setInterval(changeQuote, 3000); // Change quote every 3 seconds
     </script>
 </body>
 </html>
