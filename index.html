@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalism Quotes</title>
+    <style>
+        body {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .quote {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="quote" id="quote"></div>
+
+    <script>
+        const quotes = [
+            "Minimalism is not a lack of something. It’s simply the perfect amount of something.",
+            "Less is more.",
+            "Simplicity is the ultimate sophistication.",
+            "The more you own, the more you are owned.",
+            "Minimalism allows you to focus on what truly matters."
+        ];
+
+        let index = 0;
+
+        function changeQuote() {
+            document.getElementById('quote').innerText = quotes[index];
+            index = (index + 1) % quotes.length;
+        }
+
+        changeQuote(); // Show the first quote immediately
+        setInterval(changeQuote, 5000); // Change quote every second
+    </script>
+</body>
+</html>
